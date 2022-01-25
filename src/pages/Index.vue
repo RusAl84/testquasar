@@ -38,7 +38,7 @@
           @click="onSendClick"
           :disabled="!messageText.length"
         >
-          <q-icon :name="icons.mdiSend" />
+          Оправить
         </q-btn>
       </q-card-section>
     </q-card>
@@ -48,7 +48,6 @@
 <script>
 import { computed, defineComponent } from "vue";
 import { useStore } from 'vuex'
-import * as icons from "@quasar/extras/mdi-v6";
 import API from "../api/api.js";
 
 export default {
@@ -85,9 +84,8 @@ export default {
         $store.commit('mes/updateMessageTextState', val)
       }
     }) 
-    icons
     return {
-      $store, userName, messages, intervalCtx, lastMsgID,  messageText, icons,  
+      $store, userName, messages, intervalCtx, lastMsgID,  messageText,   
       
     }
   },
